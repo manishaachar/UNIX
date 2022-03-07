@@ -1,3 +1,6 @@
+#Write a shell script that gets executed and displays the message either “Good Morning” or
+#“Good Afternoon” or “Good Evening” depending upon time at which the user logs in.
+
 user=`whoami`
 set -- `who`
 for i in $*
