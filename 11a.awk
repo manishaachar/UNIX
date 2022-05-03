@@ -1,20 +1,16 @@
-BEGIN{
-FS="|"
-printf"Book Details"
-printf"\nSLN\tDepartment\t\tTotalBookS"
+BEGIN {
+	print "Book Details"
+	print "\nSLNO\tDEPARTMENT\t\tTOTALBOOKS\n"
 }
-
 {
 book[$1]+=$2
 total+=$2
 }
-
-END{
-for(i in book){
-SN++
-printf("\n%d\t%-20s\t%d",SN,i,book[i])
+END {
+	for(i in book) {
+		SN++
+		printf("%d\t%-20s\t%d\n",SN,i,book[i])
+	}
+	print "\n=========================================\n"
+	printf("Total books: %d\n",total)
 }
-printf("\n---------------------")
-printf("\nTotal Books:%d",total)
-}
-
